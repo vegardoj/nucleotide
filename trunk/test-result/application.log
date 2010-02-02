@@ -1,0 +1,10 @@
+02 feb 2010 22:43:40,623 INFO  ~ Starting C:\play\chernobyl
+02 feb 2010 22:43:40,626 INFO  ~ Module test-runner is available (C:\play\modules\test-runner)
+02 feb 2010 22:43:41,112 INFO  ~ 
+02 feb 2010 22:43:41,112 INFO  ~ Go to http://localhost:9000/@tests to run the tests
+02 feb 2010 22:43:41,113 INFO  ~ 
+02 feb 2010 22:43:41,114 WARN  ~ You're running Play! in DEV mode
+02 feb 2010 22:43:41,213 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+02 feb 2010 22:47:22,369 INFO  ~ Connected to jdbc:hsqldb:mem:playembed
+02 feb 2010 22:47:22,984 WARN  ~ Messages file missing for locale en
+02 feb 2010 22:47:23,044 INFO  ~ Application 'chernobyl' is now started !

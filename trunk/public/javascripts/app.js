@@ -1,0 +1,23 @@
+dojo.require("dijit.form.Button");
+dojo.require("dijit.form.TextBox");
+dojo.require("dijit.form.CheckBox");
+
+function sendForm() {
+    var button = dijit.byId("analyze");
+    dojo.connect(button, "onClick", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var xhrArgs = {
+            form: dojo.byId("analyze_form"),
+            handleAs: "text",
+            load: function(data) {
+                dojo.byId("result").innerHTML = data;
+            },
+            error: function(error) {
+                dojo.byId("result").innerHTML = "failed";
+            }
+        }
+        var deferred = dojo.xhrPost(xhrArgs);
+    });
+}
+dojo.addOnLoad(sendForm);

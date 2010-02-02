@@ -1,0 +1,19 @@
+# You can specialize this file for each language.
+# For exemple, for french create a messages.fr file
+#
+title=Titreringsanalyse
+intro_title=Introduksjon
+intro_desc=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis massa sem, facilisis eget commodo id, fringilla at sapien. Sed velit nunc, lacinia eget fermentum ac, fermentum at urna. Cras nec ligula tortor, in sollicitudin sem. Donec condimentum gravida enim sit amet tempor. Donec est mi, placerat eget pretium vitae, condimentum eu sem. Donec laoreet consectetur lacinia. Nullam auctor imperdiet lacus elementum interdum. Maecenas pharetra arcu eu odio tincidunt ac pellentesque odio volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce erat augue, semper vehicula auctor ut, hendrerit ac nulla. Sed lectus tortor, ultrices eu feugiat eu, facilisis eu enim. In condimentum adipiscing purus porta pretium. Quisque ac nisi velit. Fusce sollicitudin dignissim venenatis. Nullam est est, faucibus quis posuere vel, egestas sit amet quam. Integer id orci nibh, in mattis diam.
+data_title=Statiske data
+equation=Reaksjonslikningen:
+acid_volume=Volum av syre:
+acid_concentration=Konsentrasjon av syre:
+base_concentration=Konsentrasjon av base:
+mole_h_ions=Mol av [H+]-ioner:
+values_title=Verdier
+base_volume=Volum tilsatt base (ml):
+mole_base=mol base (OH- ioner) i løsning:
+h_ions_concentration=Konsentrasjon av [H+]-ioner (M):
+ph=pH i løsning:
+analyze=Analyser
+result_title=Resultat

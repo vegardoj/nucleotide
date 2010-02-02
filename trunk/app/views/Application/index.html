@@ -1,0 +1,56 @@
+#{extends 'main.html' /}
+
+<div id="container">
+    <h1>&{'title'}</h1>
+    <div id="lang">
+        <a href="/lang/no"><img src="/public/images/no.png" alt="Norwegian"/></a>
+        <a href="/lang/en"><img src="/public/images/us.png" alt="English"/></a>
+    </div>
+    <div id="content">
+        <h2>&{'intro_title'}</h2>
+        <p id="intro">&{'intro_desc'}</p>
+        <h3>&{'data_title'}</h3>
+        <table id="static_data">
+            <tr>
+                <td>&{'equation'}</td>
+                <td><span class="static_value"></span></td>
+            </tr>
+            <tr>
+                <td>&{'acid_volume'}</td>
+                <td><span class="static_value">50 ml</span></td>
+            </tr>
+            <tr>
+                <td>&{'acid_concentration'}</td>
+                <td><span class="static_value">0,10 M</span></td>
+            </tr>
+            <tr>
+                <td>&{'base_concentration'}</td>
+                <td><span class="static_value">0,10 M</span></td>
+            </tr>
+            <tr>
+                <td>&{'mole_h_ions'}</td>
+                <td><span class="static_value"></span></td>
+            </tr>
+        </table>
+        <form action="analyze" id="analyze_form">
+            <fieldset id="values">
+                <legend>&{'values_title'}</legend>
+                <label for="volume">&{'base_volume'}</label>
+                <input dojoType="dijit.form.TextBox" type="text" id="volume" name="volume" /><br class="clear"/>
+                <label for="mole">&{'mole_base'}</label>
+                <input dojoType="dijit.form.TextBox" type="text" id="mole" name="mole" /><br class="clear"/>
+                <label for="conc">&{'h_ions_concentration'}</label>
+                <input dojoType="dijit.form.TextBox" type="text" id="conc" name="conc" /><br class="clear"/>
+                <label for="ph">&{'ph'}</label>
+                <input  dojoType="dijit.form.TextBox" type="text" id="ph" name="ph" /><br class="clear"/>
+                <button type="submit" dojoType="dijit.form.Button" id="analyze">&{'analyze'}</button>
+            </fieldset>
+        </form>
+        <h4>&{'result_title'}</h4>
+        <div id="result">[placeholder]</div>
+    </div>
+    <div id="clear"></div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.4.0/dojo/dojo.xd.js" djConfig="parseOnLoad: true">
+</script>
+<script type="text/javascript" src="/public/javascripts/app.js"></script>

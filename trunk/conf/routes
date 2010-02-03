@@ -9,7 +9,7 @@ GET     /                                       Application.index
 GET     /public/                                staticDir:public
 
 # Language changer
-GET     /lang/{locale}                          Application.index
+GET     /lang/{locale}                          Application.lang
 
 # POST data
 POST    /analyze                                Analyze.result

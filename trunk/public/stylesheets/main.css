@@ -7,6 +7,15 @@ img {
     border: 0;
 }
 
+h1 {
+    font-size: 12pt;
+}
+
+h2, h3, h4 {
+    font-size: 10pt;
+    text-decoration: underline;
+}
+
 div#container {
     width: 700px;
     margin-left:auto;
@@ -15,16 +24,8 @@ div#container {
 
 div#content {
     float: left;
-    border: 1px solid black;
     padding: 15px;
-}
-
-h1 {
-    font-size: 12pt;
-}
-
-h2, h3, h4 {
-    font-size: 10pt;
+    border: 1px dashed black;
 }
 
 table#static_data {
@@ -34,8 +35,8 @@ table#static_data {
     margin-bottom: 20px;
 }
 
-span.static_value {
-    background-color: #e3e2e2;
+fieldset#values {
+    background-color: #fffee0;
 }
 
 fieldset#values legend {
@@ -47,8 +48,8 @@ fieldset#values label {
     float: left;
 }
 
-fieldset#values input, fieldset#values button {
-    float: right;
+span.static_value {
+    background-color: #e3e2e2;
 }
 
 br.clear {

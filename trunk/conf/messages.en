@@ -2,18 +2,31 @@
 # For exemple, for french create a messages.fr file
 #
 title=Titration analysis
+
 intro_title=Introduction
 intro_desc=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis massa sem, facilisis eget commodo id, fringilla at sapien. Sed velit nunc, lacinia eget fermentum ac, fermentum at urna. Cras nec ligula tortor, in sollicitudin sem. Donec condimentum gravida enim sit amet tempor. Donec est mi, placerat eget pretium vitae, condimentum eu sem. Donec laoreet consectetur lacinia. Nullam auctor imperdiet lacus elementum interdum. Maecenas pharetra arcu eu odio tincidunt ac pellentesque odio volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce erat augue, semper vehicula auctor ut, hendrerit ac nulla. Sed lectus tortor, ultrices eu feugiat eu, facilisis eu enim. In condimentum adipiscing purus porta pretium. Quisque ac nisi velit. Fusce sollicitudin dignissim venenatis. Nullam est est, faucibus quis posuere vel, egestas sit amet quam. Integer id orci nibh, in mattis diam.
-data_title=Static data
-equation=Chemical equation:
-acid_volume=Volume of acid:
-acid_concentration=Concentration of acid:
-base_concentration=Concentration of base:
-mole_h_ions=Mol of [H+]-ions:
-values_title=Values
-base_volume=Volume of added base (ml):
-mole_base=mol base (OH- ions) in solution:
-h_ions_concentration=Concentration of [H+] ions (M):
-ph=pH in solution:
-analyze=Analyze
+
+static_title=Static data
+static_val1=Chemical equation:
+static_val2=Volume of acid:
+static_val3=Concentration of acid:
+static_val4=Concentration of base:
+static_val5=Mol of [H+]-ions:
+
+input_title=Calculation
+input_val1=Volume of added base (ml):
+input_val2=mol base (OH- ions) in solution:
+input_val3=Concentration of [H+] ions (M):
+input_val4=pH in solution:
+input_button=Analyze
+
 result_title=Result
+
+info_val1=Number of milliliters added base
+info_val2=Number of mole base in solution
+info_val3=Concentration
+info_val4=pH
+
+warning=Must be a positive number
+
+error=Invalid or missing values

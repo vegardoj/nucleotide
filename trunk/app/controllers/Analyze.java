@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Analysis;
-import models.Result;
 import play.mvc.Controller;
 
 
@@ -24,16 +23,17 @@ public class Analyze extends Controller {
         Double ph = params.get("ph", Double.class);
 
         if (volume == null || mole == null || conc == null || ph == null) {
+            response.status = 400;
             renderText("Invalid or missing values");
         } else {
             Analysis a = new Analysis("test", volume, mole, conc, ph);
-            renderJSON(_result(a)); // NICE!
+            //renderJSON(obj); // NICE!
+            renderText(_result(a));
         }
     }
 
-    private static Result _result(Analysis a) {
-        double result = a.conc + a.mole + a.conc + a.ph;
-        return new Result(result);
+    private static double _result(Analysis a) {
+        return a.conc * a.mole * a.conc * a.ph;
     }
 
 }

@@ -2,38 +2,43 @@
 #{i18n /}
 
 <div id="container">
-    <h1>&{'title'}</h1>
+    <div id="header">&{'title'}</div>
+    <div id="title">
+        <span class="arrow"></span>
+        <h1>&{'title_long'}</h1>
+        <h2>&{'title_sub'}</h2>
+    </div>
     <div id="lang">
         <a href="/lang/no"><img src="/public/images/no.png" alt="Norwegian"/></a>
         <a href="/lang/en"><img src="/public/images/us.png" alt="English"/></a>
     </div>
     <div id="content">
-        <h2>&{'intro_title'}</h2>
-        <p id="intro">&{'intro_desc'}</p>
-        <h3>&{'static_title'}</h3>
-        <table id="static_data">
+        <h3>&{'intro_title'}</h3>
+        <p>&{'intro_desc'}</p>
+        <h4>&{'static_title'}</h4>
+        <table id="data">
             <tr>
                 <td>&{'static_val1'}</td>
-                <td><span class="static_value"></span></td>
+                <td><span class="data_value"></span></td>
             </tr>
             <tr>
                 <td>&{'static_val2'}</td>
-                <td><span class="static_value">50 ml</span></td>
+                <td><span class="data_value">50 ml</span></td>
             </tr>
             <tr>
                 <td>&{'static_val3'}</td>
-                <td><span class="static_value">0,10 M</span></td>
+                <td><span class="data_value">0,10 M</span></td>
             </tr>
             <tr>
                 <td>&{'static_val4'}</td>
-                <td><span class="static_value">0,10 M</span></td>
+                <td><span class="data_value">0,10 M</span></td>
             </tr>
             <tr>
                 <td>&{'static_val5'}</td>
-                <td><span class="static_value"></span></td>
+                <td><span class="data_value"></span></td>
             </tr>
         </table>
-        <form action="/analyze" id="analyze_form" dojoType="dijit.form.Form">
+        <form action="/analyze" id="input" dojoType="dijit.form.Form">
             <fieldset id="values">
                 <legend>&{'input_title'}</legend>
                 <label for="volume">&{'input_val1'}</label>
@@ -76,13 +81,14 @@
                        id="ph"
                        name="ph"
                        style="float: right;"/><br class="clear"/>
-                <button type="submit" dojoType="dijit.form.Button" id="analyze" style="float: right;">&{'input_button'}</button><br class="clear" />
+                <button type="submit" dojoType="dijit.form.Button" id="button" style="float: right;">&{'input_button'}</button><br class="clear" />
             </fieldset>
         </form>
-        <h4>&{'result_title'}</h4>
-        <div id="result">&nbsp;</div>
+        <h5>&{'result_title'}</h5>
+        <div id="result"></div>
     </div>
     <div class="clear"></div>
 </div>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.4.0/dojo/dojo.xd.js" djConfig="parseOnLoad: true"></script>
 <script type="text/javascript" src="/public/javascripts/app.js"></script>

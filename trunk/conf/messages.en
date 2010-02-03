@@ -1,7 +1,7 @@
 # You can specialize this file for each language.
 # For exemple, for french create a messages.fr file
 #
-title=chernobyl
+title=nucleotide
 title_long=Titration analysis
 title_sub=..with charts!
 

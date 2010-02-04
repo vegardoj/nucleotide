@@ -5,8 +5,7 @@ dojo.require("dijit.form.Form");
 dojo.require("dijit.form.ValidationTextBox");
 dojo.require("dojox.charting.Chart2D");
 
-var chernobyl = {};
-chernobyl.ChartGenerator = (function() {
+var chartBuilder = (function() {
     var chart = null;
     return {
         makeChart: function() {
@@ -31,7 +30,7 @@ chernobyl.ChartGenerator = (function() {
                     form: dojo.byId("input"),
                     handleAs: "text",
                     load: function(data) {
-                        chernobyl.ChartGenerator.makeChart();
+                        chartBuilder.makeChart();
                     },
                     error: function(error) {
                         dojo.byId("result").innerHTML = i18n('error');
@@ -42,4 +41,4 @@ chernobyl.ChartGenerator = (function() {
         }
     }
 })();
-dojo.addOnLoad(chernobyl.ChartGenerator.sendForm);
+dojo.addOnLoad(chartBuilder.sendForm);

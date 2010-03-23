@@ -41,7 +41,7 @@ var chartBuilder = (function() {
             });
         },
         createDialog: function() {
-            var color = dijit.byId("dialogColor");
+            var color = dijit.byId("resultDialog");
             dojo.connect(dijit.byId("calculate"), "onClick", color, "show");
         }
     }

@@ -112,3 +112,7 @@ h3, h4, h5 {
     height: 150px;
     width: 250px;
 }
+
+#dialogColor_underlay {
+    background-color: black;
+}

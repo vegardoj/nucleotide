@@ -81,11 +81,12 @@
                        id="ph"
                        name="ph"
                        style="float: right;"/><br class="clear"/>
-                <button type="submit" dojoType="dijit.form.Button" id="button" style="float: right;">&{'input_button'}</button><br class="clear" />
+                <button type="submit" dojoType="dijit.form.Button" id="calculate" style="float: right;">&{'input_button'}</button><br class="clear" />
             </fieldset>
         </form>
-        <h5>&{'result_title'}</h5>
-        <div id="result"></div>
+        <div id="dialogColor" title="&{'result_title'}" dojoType="dijit.Dialog">
+            <div id="result"></div>
+        </div>
     </div>
     <div class="clear"></div>
 </div>

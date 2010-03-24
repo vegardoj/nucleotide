@@ -23,73 +23,27 @@
             </tr>
             <tr>
                 <td>&{'static_val2'}</td>
-                <td><span class="data_value">50 ml</span></td>
+                <td><span class="data_value">50 mL</span></td>
             </tr>
             <tr>
                 <td>&{'static_val3'}</td>
-                <td><span class="data_value">0,10 M</span></td>
+                <td><span class="data_value">0.10 M</span></td>
             </tr>
             <tr>
                 <td>&{'static_val4'}</td>
-                <td><span class="data_value">0,10 M</span></td>
+                <td><span class="data_value">0.10 M</span></td>
             </tr>
             <tr>
                 <td>&{'static_val5'}</td>
-                <td><span class="data_value"></span></td>
+                <td><span class="data_value">0.005 mol</span></td>
             </tr>
         </table>
-        <form action="/analyze" id="input" dojoType="dijit.form.Form">
-            <fieldset id="values">
-                <legend>&{'input_title'}</legend>
-                <label for="volume">&{'input_val1'}</label>
-                <input dojoType="dijit.form.ValidationTextBox"
-                       regExp="\d+(\.\d+)?"
-                       required="true"
-                       invalidMessage="&{'warning'}"
-                       promptMessage="&{'info_val1'}"
-                       type="text"
-                       id="volume"
-                       name="volume"
-                       style="float: right;"/><br class="clear"/>
-                <label for="mole">&{'input_val2'}</label>
-                <input dojoType="dijit.form.ValidationTextBox"
-                       regExp="\d+(\.\d+)?"
-                       required="true"
-                       invalidMessage="&{'warning'}"
-                       promptMessage="&{'info_val2'}"
-                       type="text"
-                       id="mole"
-                       name="mole"
-                       style="float: right;"/><br class="clear"/>
-                <label for="conc">&{'input_val3'}</label>
-                <input dojoType="dijit.form.ValidationTextBox"
-                       regExp="\d+(\.\d+)?"
-                       required="true"
-                       invalidMessage="&{'warning'}"
-                       promptMessage="&{'info_val3'}"
-                       type="text"
-                       id="conc"
-                       name="conc"
-                       style="float: right;"/><br class="clear"/>
-                <label for="ph">&{'input_val4'}</label>
-                <input dojoType="dijit.form.ValidationTextBox"
-                       regExp="\d+(\.\d+)?"
-                       required="true"
-                       invalidMessage="&{'warning'}"
-                       promptMessage="&{'info_val4'}"
-                       type="text"
-                       id="ph"
-                       name="ph"
-                       style="float: right;"/><br class="clear"/>
-                <button type="submit" dojoType="dijit.form.Button" id="calculate" style="float: right;">&{'input_button'}</button><br class="clear" />
-            </fieldset>
-        </form>
+        <div id="calculate"></div>
         <div id="resultDialog" title="&{'result_title'}" dojoType="dijit.Dialog">
             <div id="result"></div>
         </div>
     </div>
     <div class="clear"></div>
 </div>
-
-<script type="text/javascript" src="/public/javascripts/dojo.xd.js" djConfig="parseOnLoad: true"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.4.0/dojo/dojo.xd.js" djConfig="parseOnLoad: true"></script>
 <script type="text/javascript" src="/public/javascripts/app.js"></script>

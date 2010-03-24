@@ -16,10 +16,10 @@ static_val4=Konsentrasjon av base:
 static_val5=Mol av [H+]-ioner:
 
 input_title=Beregning
-input_val1=Volum tilsatt base (ml):
-input_val2=mol base (OH- ioner) i løsning:
-input_val3=Konsentrasjon av [H+]-ioner (M):
-input_val4=pH i løsning:
+input_val1=Volum tilsatt base (ml): 
+input_val2=mol base (OH- ioner) i løsning: 
+input_val3=Konsentrasjon av [H+]-ioner (M): 
+input_val4=pH i løsning: 
 input_button=Analyser
 
 result_title=Resultat

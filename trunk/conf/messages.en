@@ -16,10 +16,10 @@ static_val4=Concentration of base:
 static_val5=Mol of [H+]-ions:
 
 input_title=Calculation
-input_val1=Volume of added base (ml):
-input_val2=mol base (OH- ions) in solution:
-input_val3=Concentration of [H+] ions (M):
-input_val4=pH in solution:
+input_val1=Volume of added base (ml): 
+input_val2=mol base (OH- ions) in solution: 
+input_val3=Concentration of [H+] ions (M): 
+input_val4=pH in solution: 
 input_button=Analyze
 
 result_title=Result

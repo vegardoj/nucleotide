@@ -43,15 +43,10 @@ public class Analyze extends Controller {
                 ph = eq ? 14 - (-Math.log10(conc * -1)) : -Math.log10(conc);
             }
 
-            result[i] = new Point(baseVol, formatDecimals(ph, 2), moleBase, conc);
+            result[i] = new Point(baseVol, ph, moleBase, conc);
         }
 
         return result;
-    }
-
-    private static double formatDecimals(final double d, final int n) {
-        final double factor = Math.pow(10, n);
-        return Math.round(d * factor) / factor;
     }
 
     /* JavaScript version

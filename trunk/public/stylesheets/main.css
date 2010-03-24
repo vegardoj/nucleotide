@@ -91,15 +91,6 @@ h3, h4, h5 {
     background-color: #fffee0;
 }
 
-#input legend {
-    font-weight: bold;
-}
-
-#input label {
-    width: 230px;
-    float: left;
-}
-
 #lang {
     float: right;
 }

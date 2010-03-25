@@ -29,6 +29,8 @@ info_val2=Antall mol base i løsning
 info_val3=Konsentrasjon
 info_val4=pH
 
+desc_graph=Flytt pekeren over punktene i grafen for å se resultatene
+
 warning=Må være et positivt heltall eller desimaltall
 
 error=Ugyldig eller manglende verdier

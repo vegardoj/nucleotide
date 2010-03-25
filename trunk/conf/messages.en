@@ -29,6 +29,8 @@ info_val2=Number of mole base in solution
 info_val3=Concentration
 info_val4=pH
 
+desc_graph=Move your mouse pointer over the markers in the graph to see the results
+
 warning=Must be a positive number
 
 error=Invalid or missing values

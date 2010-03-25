@@ -16,12 +16,14 @@ public class Point {
     private double y;
     private double mole;
     private double conc;
+    private boolean eq;
 
-    public Point(double x, double y, double mole, double conc) {
+    public Point(double x, double y, double mole, double conc, boolean eq) {
         this.x = x;
         this.y = y;
         this.mole = mole;
         this.conc = conc;
+        this.eq = eq;
     }
 
     public double getConc() {
@@ -30,6 +32,10 @@ public class Point {
 
     public double getMole() {
         return mole;
+    }
+
+    public boolean isEq() {
+        return eq;
     }
 
     public double getX() {

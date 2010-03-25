@@ -10,25 +10,31 @@ dojo.require("dojox.charting.widget.Legend");
 
 var nucleotide = (function() {
 
+    var graph = null;
+
     var makeGraph = function(data) {
-        var c = new dojox.charting.Chart2D("result");
+        if (graph !== null) {
+            var graph = new dojox.charting.Chart2D("result");
 
-        c.addPlot("default", {
-            type: "Lines",
-            markers: true,
-            tension: 3
-        });
+            graph.addPlot("default", {
+                type: "Lines",
+                markers: true,
+                tension: 3
+            });
 
-        c.addAxis("x", {
-            font: "normal normal normal 12pt Arial"
-        });
+            graph.addAxis("x", {
+                font: "normal normal normal 12pt Arial"
+            });
 
-        c.addAxis("y", {
-            vertical: true,
-            font: "normal normal normal 12pt Arial"
-        });
-        
-        c.setTheme(dojox.charting.themes.BlueDusk);
+            graph.addAxis("y", {
+                vertical: true,
+                font: "normal normal normal 12pt Arial"
+            });
+
+            graph.setTheme(dojox.charting.themes.BlueDusk);
+            new dojox.charting.action2d.Tooltip(graph, "default");
+            new dojox.charting.action2d.Highlight(graph, "default");
+        }
 
         for (var i = 0; i < data.length; i++) {
             data[i].tooltip =
@@ -36,13 +42,15 @@ var nucleotide = (function() {
                 i18n('input_val1') + fmtDecimals(data[i].x, 2) + "<br />" +
                 i18n('input_val2') + fmtExp(data[i].mole, 2) + "<br />" +
                 i18n('input_val3') + fmtExp(data[i].conc, 2) + "<br />";
+            if (data[i].eq) {
+                data[i].tooltip += "<p class=\"eq_point\">" + i18n('desc_point') + "</p>";
+            }
         }
 
-        c.addSeries("pH", data);
-        new dojox.charting.action2d.Tooltip(c, "default");
-        new dojox.charting.action2d.Highlight(c, "default");
+        graph.addSeries("pH", data);
 
-        c.render();
+
+        graph.render();
     }
 
     var fmtDecimals = function(d, n) {

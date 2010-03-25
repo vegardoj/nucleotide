@@ -22,28 +22,41 @@ public class Analyze extends Controller {
         renderJSON(ph);
     }
 
+    // acidConc: Concentration of acid, e.g. 0.10 (M)
+    // acidVolume: Volume of acid, e.g. 25 (mL)
+    // baseConc: Concentration of base, e.g. 0.10 (M)
+    // baseVols: List of base volumes, e.g. [0, 10, 24.99, 25, 25.01, 26, 50] (mL)
     public static Point[] getPoints(double acidConc, double acidVol, double baseConc,
             double[] baseVols) {
 
         Point[] result = new Point[baseVols.length];
-        boolean eq = false;
+        boolean isBase = false;
+        boolean isEquivalent = false;
         final double moleAcid = (acidConc / 1000) * acidVol;
-        double ph, conc;
+
+        double pH, conc;
 
         for (int i = 0; i < baseVols.length; i++) {
             double baseVol = baseVols[i];
-            double moleBase = (baseConc / 1000) * baseVol;
-            double diff = moleAcid - moleBase;
-            if (diff == 0) {
-                eq = true;
-                ph = 7;
+            double baseMole = (baseConc / 1000) * baseVol;
+            double diffMole = moleAcid - baseMole;
+            if (diffMole == 0) { // This is the equivalent point
+                pH = 7;
                 conc = 0;
+                isBase = true;
+                isEquivalent = true;
             } else {
-                conc = diff / ((acidVol + baseVol) / 1000);
-                ph = eq ? 14 - (-Math.log10(conc * -1)) : -Math.log10(conc);
+                conc = diffMole / ((acidVol + baseVol) / 1000);
+                if (isBase) { // When we reach the equivalent point we need to calculate the pH differently
+                    conc = -conc;
+                    pH = 14 + Math.log10(conc);
+                } else {
+                    pH = -Math.log10(conc);
+                }
+                isEquivalent = false;
             }
 
-            result[i] = new Point(baseVol, ph, moleBase, conc);
+            result[i] = new Point(baseVol, pH, baseMole, conc, isEquivalent);
         }
 
         return result;

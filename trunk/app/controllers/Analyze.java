@@ -17,8 +17,12 @@ import play.mvc.Controller;
 public class Analyze extends Controller {
 
     public static void result() {
-        double[] volumes = new double[] {0, 10, 17, 20, 24, 24.99, 25, 25.01, 26, 28, 30, 50};
-        Point[] ph = getPoints(0.10, 25, 0.10, volumes);
+        double[] volumes = new double[] {
+            0, 10, 15, 20, 25, 30, 35, 40, 45,
+            48, 49.5, 49.95, 49.99, 50, 50.01, 50.05, 50.5, 52,
+            55, 60, 65, 70, 75, 80, 85, 90, 95, 100
+        };
+        Point[] ph = getPoints(0.10, 50, 0.10, volumes);
         renderJSON(ph);
     }
 

@@ -14,27 +14,29 @@ var nucleotide = (function() {
 
     var makeGraph = function(data) {
         if (graph !== null) {
-            var graph = new dojox.charting.Chart2D("result");
-
-            graph.addPlot("default", {
-                type: "Lines",
-                markers: true,
-                tension: 3
-            });
-
-            graph.addAxis("x", {
-                font: "normal normal normal 12pt Arial"
-            });
-
-            graph.addAxis("y", {
-                vertical: true,
-                font: "normal normal normal 12pt Arial"
-            });
-
-            graph.setTheme(dojox.charting.themes.BlueDusk);
-            new dojox.charting.action2d.Tooltip(graph, "default");
-            new dojox.charting.action2d.Highlight(graph, "default");
+            dojo.destroy(graph);
         }
+        
+        graph = new dojox.charting.Chart2D("result");
+
+        graph.addPlot("default", {
+            type: "Lines",
+            markers: true,
+            tension: 3
+        });
+
+        graph.addAxis("x", {
+            font: "normal normal normal 12pt Arial"
+        });
+
+        graph.addAxis("y", {
+            vertical: true,
+            font: "normal normal normal 12pt Arial"
+        });
+
+        graph.setTheme(dojox.charting.themes.BlueDusk);
+        new dojox.charting.action2d.Tooltip(graph, "default");
+        new dojox.charting.action2d.Highlight(graph, "default");
 
         for (var i = 0; i < data.length; i++) {
             data[i].tooltip =

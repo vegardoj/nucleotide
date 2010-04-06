@@ -12,7 +12,7 @@ GET     /public/                                staticDir:public
 GET     /lang/{locale}                          Application.lang
 
 # Get data
-GET     /analyze                                Analyze.result
+POST     /analyze                                Analyze.result
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

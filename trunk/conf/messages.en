@@ -6,7 +6,7 @@ title_long=Titration analysis
 title_sub=..with charts!
 
 intro_title=Introduction
-intro_desc=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis massa sem, facilisis eget commodo id, fringilla at sapien. Sed velit nunc, lacinia eget fermentum ac, fermentum at urna. Cras nec ligula tortor, in sollicitudin sem. Donec condimentum gravida enim sit amet tempor. Donec est mi, placerat eget pretium vitae, condimentum eu sem. Donec laoreet consectetur lacinia. Nullam auctor imperdiet lacus elementum interdum. Maecenas pharetra arcu eu odio tincidunt ac pellentesque odio volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce erat augue, semper vehicula auctor ut, hendrerit ac nulla. Sed lectus tortor, ultrices eu feugiat eu, facilisis eu enim. In condimentum adipiscing purus porta pretium. Quisque ac nisi velit. Fusce sollicitudin dignissim venenatis. Nullam est est, faucibus quis posuere vel, egestas sit amet quam. Integer id orci nibh, in mattis diam.
+intro_desc=In this project we've made a small webapp that shows a titration curve  when 50 mL 0.10 M HCl is titrated with 0.10M NaOH.
 
 static_title=Static data
 static_val1=Chemical equation:
@@ -20,7 +20,7 @@ input_val1=Volume of added base (ml):
 input_val2=mol base (OH- ions) in solution: 
 input_val3=Concentration of [H+] ions (M): 
 input_val4=pH in solution: 
-input_button=Analyze
+input_button=Show point
 
 result_title=Result
 
@@ -31,6 +31,10 @@ info_val4=pH
 
 desc_graph=Move your mouse pointer over the markers in the graph to see the results
 desc_point=Equivalence point
-warning=Must be a positive number
+warning=Must be a number between 0 and 100
 
 error=Invalid or missing values
+
+wrong_volume=Volume must be a number between 0 and 100
+
+create_button=Make graph

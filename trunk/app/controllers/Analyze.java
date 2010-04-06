@@ -17,12 +17,21 @@ import play.mvc.Controller;
 public class Analyze extends Controller {
 
     public static void result() {
-        double[] volumes = new double[] {
-            0, 10, 15, 20, 25, 30, 35, 40, 45,
-            48, 49.5, 49.95, 49.99, 50, 50.01, 50.05, 50.5, 52,
-            55, 60, 65, 70, 75, 80, 85, 90, 95, 100
-        };
-        Point[] ph = getPoints(0.10, 50, 0.10, volumes);
+        Double volume = params.get("volume", Double.class);
+
+        //System.out.println(volume);
+
+        Point[] ph;
+        if (volume == null) {
+            double[] volumes = new double[] {
+                0, 5, 10, 15, 20, 25, 30, 35, 40, 45,
+                48, 49.5, 49.95, 49.99, 50, 50.01, 50.05, 50.5, 52,
+                55, 60, 65, 70, 75, 80, 85, 90, 95, 100
+            };
+            ph = getPoints(0.10, 50, 0.10, volumes);
+        } else {
+            ph = getPoints(0.10, 50, 0.10, new double[] {volume});
+        }
         renderJSON(ph);
     }
 
@@ -34,7 +43,6 @@ public class Analyze extends Controller {
             double[] baseVols) {
 
         Point[] result = new Point[baseVols.length];
-        boolean isBase = false;
         boolean isEquivalent = false;
         final double moleAcid = (acidConc / 1000) * acidVol;
 
@@ -47,11 +55,10 @@ public class Analyze extends Controller {
             if (diffMole == 0) { // This is the equivalent point
                 pH = 7;
                 conc = 0;
-                isBase = true;
                 isEquivalent = true;
             } else {
                 conc = diffMole / ((acidVol + baseVol) / 1000);
-                if (isBase) { // When we reach the equivalent point we need to calculate the pH differently
+                if (conc < 0) { // When we reach the equivalent point we need to calculate the pH differently
                     conc = -conc;
                     pH = 14 + Math.log10(conc);
                 } else {
@@ -65,43 +72,5 @@ public class Analyze extends Controller {
 
         return result;
     }
-
-    /* JavaScript version
-        getPh: function(acidConc, acidVolume, baseConc, baseVolumes) {
-
-            // acidConc: Concentration of acid, e.g. 0.10 (M)
-            // acidVolume: Volume of acid, e.g. 25 (mL)
-            // baseConc: Concentration of base, e.g. 0.10 (M)
-            // baseVolume: List of base volumes, e.g. [0, 10, 24.99, 25, 25.01, 26, 50] (mL)
-
-            // List which we will be filling with pH values
-            var result = [];
-
-            // Calculate number of mole acid
-            var moleAcid = (acidConc / 1000) * acidVolume;
-
-            // Reached equivalent point
-            var eq = false;
-
-            // Calculate pH values
-            for (var i = 0; i < baseVolumes.length; i++) {
-                var moleBase = (baseConc / 1000) * baseVolumes[i];
-                var diff = moleAcid - moleBase;
-                var ph;
-                if (diff === 0) {
-                    eq = true;
-                    ph = 7;
-                } else {
-                    var conc = diff / ((acidVolume + baseVolumes[i]) / 1000);
-                    // Dividing by log(10) to get log base 10
-                    ph = eq ? 14 - (-Math.log(conc * -1) / Math.LN10) : -Math.log(conc) / Math.LN10;
-                }
-
-                result.push(ph);
-            }
-
-            return result;
-        }
-    */
 
 }

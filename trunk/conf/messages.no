@@ -6,7 +6,7 @@ title_long=Titreringsanalyse
 title_sub=..med kurve!
 
 intro_title=Introduksjon
-intro_desc=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis massa sem, facilisis eget commodo id, fringilla at sapien. Sed velit nunc, lacinia eget fermentum ac, fermentum at urna. Cras nec ligula tortor, in sollicitudin sem. Donec condimentum gravida enim sit amet tempor. Donec est mi, placerat eget pretium vitae, condimentum eu sem. Donec laoreet consectetur lacinia. Nullam auctor imperdiet lacus elementum interdum. Maecenas pharetra arcu eu odio tincidunt ac pellentesque odio volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce erat augue, semper vehicula auctor ut, hendrerit ac nulla. Sed lectus tortor, ultrices eu feugiat eu, facilisis eu enim. In condimentum adipiscing purus porta pretium. Quisque ac nisi velit. Fusce sollicitudin dignissim venenatis. Nullam est est, faucibus quis posuere vel, egestas sit amet quam. Integer id orci nibh, in mattis diam.
+intro_desc=I dette programmeringsprosjektet har vi laget et program som viser titreringskurven når 50 ml 0,10 M HCl titreres med 0,10 M NaOH.
 
 static_title=Oppgitte data
 static_val1=Reaksjonslikningen:
@@ -20,7 +20,7 @@ input_val1=Volum tilsatt base (ml):
 input_val2=mol base (OH- ioner) i løsning: 
 input_val3=Konsentrasjon av [H+]-ioner (M): 
 input_val4=pH i løsning: 
-input_button=Analyser
+input_button=Vis punkt
 
 result_title=Resultat
 
@@ -34,3 +34,7 @@ desc_point=Ekvivalenspunktet!
 warning=Må være et positivt heltall eller desimaltall
 
 error=Ugyldig eller manglende verdier
+
+wrong_volume=Volum må være et tall mellom 0 og 100
+
+create_button=Lag graf

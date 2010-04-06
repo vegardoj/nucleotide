@@ -155,24 +155,25 @@ var nucleotide = (function() {
                 event.preventDefault();
                 event.stopPropagation();
                 var volume = dijit.byId("input").getValue();
-                var xhrArgs = {
-                    url: "/analyze",
-                    postData: "volume=" + volume,
-                    handleAs: "json",
-                    load: function(data) {
-                        updateSelected(data);
-                    },
-                    error: function(error) {
-                        dojo.byId("result").innerHTML = i18n('error');
+                if (volume.match("([0-9]{1,2}|100)(\\.\\d+)?") !== null) {
+                    var xhrArgs = {
+                        url: "/analyze",
+                        postData: "volume=" + volume,
+                        handleAs: "json",
+                        load: function(data) {
+                            updateSelected(data);
+                        },
+                        error: function(error) {
+                            dojo.byId("result").innerHTML = i18n('error');
+                        }
                     }
+                    var deferred = dojo.xhrPost(xhrArgs);
                 }
-                var deferred = dojo.xhrPost(xhrArgs);
             });
         }
     }
 
     var createDialog = function() {
-        //var color = dijit.byId("resultDialog");
         if (dialog === null) {
             dialog = new dijit.Dialog(
                 {

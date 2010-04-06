@@ -8,6 +8,9 @@ title_sub=..med kurve!
 intro_title=Introduksjon
 intro_desc=I dette programmeringsprosjektet har vi laget et program som viser titreringskurven når 50 ml 0,10 M HCl titreres med 0,10 M NaOH.
 
+instructions_title=Instruksjoner
+instructions=Øverst i høyre hjørne kan du velge språk for denne siden. Deretter kan du klikke "Lag graf"-knappen for å lage titreringsgrafen, etter på kan du vise punkt i grafen ved å skrive inn et volum i feltet nedenfor og klikke på "Vis punkt". En rød prikk i grafen vil markere volumet du oppgir.
+
 static_title=Oppgitte data
 static_val1=Reaksjonslikningen:
 static_val2=Volum av syre:
@@ -22,8 +25,6 @@ input_val3=Konsentrasjon av [H+]-ioner (M):
 input_val4=pH i løsning: 
 input_button=Vis punkt
 
-result_title=Resultat
-
 info_val1=Antall ml tilsatt base
 info_val2=Antall mol base i løsning
 info_val3=Konsentrasjon
@@ -31,7 +32,7 @@ info_val4=pH
 
 desc_graph=Flytt pekeren over punktene i grafen for å se resultatene
 desc_point=Ekvivalenspunktet!
-warning=Må være et positivt heltall eller desimaltall
+warning=Må være et tall mellom 0 og 100
 
 error=Ugyldig eller manglende verdier
 

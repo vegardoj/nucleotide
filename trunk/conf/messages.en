@@ -8,6 +8,9 @@ title_sub=..with charts!
 intro_title=Introduction
 intro_desc=In this project we've made a small webapp that shows a titration curve  when 50 mL 0.10 M HCl is titrated with 0.10M NaOH.
 
+instructions_title=Instructions
+instructions=First of all, in the upper right corner you can choose the display language for this site. Then you can click the "Make graph" button to create the initial graph, afterwards you can show various points on the graph by entering a volume in the input field below and then clicking "Show point". A red dot in the graph will indicate the point you selected.
+
 static_title=Static data
 static_val1=Chemical equation:
 static_val2=Volume of acid:
@@ -21,8 +24,6 @@ input_val2=mol base (OH- ions) in solution:
 input_val3=Concentration of [H+] ions (M): 
 input_val4=pH in solution: 
 input_button=Show point
-
-result_title=Result
 
 info_val1=Number of milliliters added base
 info_val2=Number of mole base in solution

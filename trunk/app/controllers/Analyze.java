@@ -18,9 +18,6 @@ public class Analyze extends Controller {
 
     public static void result() {
         Double volume = params.get("volume", Double.class);
-
-        //System.out.println(volume);
-
         Point[] ph;
         if (volume == null) {
             double[] volumes = new double[] {

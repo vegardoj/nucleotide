@@ -75,12 +75,12 @@ var nucleotide = (function() {
     var fmtData = function(data) {
         for (var i = 0; i < data.length; i++) {
             data[i].tooltip =
-                i18n('input_val4') + fmtDecimals(data[i].y, 2) + "<br />" +
-                i18n('input_val1') + fmtDecimals(data[i].x, 2) + "<br />" +
-                i18n('input_val2') + fmtExp(data[i].mole, 2) + "<br />" +
-                i18n('input_val3') + fmtExp(data[i].conc, 2) + "<br />";
+                i18n('ph_tooltip') + "<b>" + fmtDecimals(data[i].y, 2) + "</b><br />" +
+                i18n('volume_tooltip') + "<b>" + fmtDecimals(data[i].x, 2) + "</b><br />" +
+                i18n('mole_tooltip') + "<b>" + fmtExp(data[i].mole, 2) + "</b><br />" +
+                i18n('conc_tooltip') + "<b>" + fmtExp(data[i].conc, 2) + "</b><br />";
             if (data[i].eq) {
-                data[i].tooltip += "<p class=\"eq_point\">" + i18n('desc_point') + "</p>";
+                data[i].tooltip += "<span class=\"eq_point\">" + i18n('desc_point') + "</span><br />";
             }
         }
         return data;
@@ -89,7 +89,7 @@ var nucleotide = (function() {
     var updateSelected = function(data) {
         if (graph !== null) {
             data = fmtData(data);
-            graph.updateSeries("selectPoint", data, {plot: "selected", stroke: {color:"red"}});
+            graph.updateSeries("selectPoint", data);
             graph.render();
         }
     }
@@ -103,22 +103,22 @@ var nucleotide = (function() {
         return new Number(d).toExponential(n);
     }
 
-    var setupHandlers = function() {
-
+    var setupInput = function() {
         if (volumeInput === null) {
             volumeInput = new dijit.form.ValidationTextBox(
                 {
                     required: true,
                     regExp: "([0-9]{1,2}|100)(\\.\\d+)?",
                     invalidMessage: i18n('warning'),
-                    promptMessage: i18n('input_val1'),
+                    promptMessage: i18n('input_tooltip'),
                     style: "display: block"
                 }, "input"
             );
         }
+    }
 
+    var setupButtons = function() {
         if (createButton === null) {
-
             createButton = new dijit.form.Button(
                 {
                     label: i18n('create_button')
@@ -142,15 +142,12 @@ var nucleotide = (function() {
                 }
             });
         }
-
         if (pointButton === null) {
-
             pointButton = new dijit.form.Button(
                 {
                     label: i18n('input_button')
                 }, "calculate"
             );
-
             dojo.connect(pointButton, "onClick", function(event) {
                 event.preventDefault();
                 event.stopPropagation();
@@ -173,7 +170,7 @@ var nucleotide = (function() {
         }
     }
 
-    var createDialog = function() {
+    var setupDialog = function() {
         if (dialog === null) {
             dialog = new dijit.Dialog(
                 {
@@ -189,8 +186,9 @@ var nucleotide = (function() {
     return {
 
         init: function() {
-            setupHandlers();
-            createDialog();
+            setupInput();
+            setupButtons();
+            setupDialog();
         }
 
     }

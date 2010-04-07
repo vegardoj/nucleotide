@@ -6,7 +6,7 @@ intro_title=Introduksjon
 intro_desc=I dette programmeringsprosjektet har vi laget et program som viser titreringskurven når 50 ml 0,10 M HCl titreres med 0,10 M NaOH.
 
 instructions_title=Instruksjoner
-instructions=Øverst i høyre hjørne kan du velge språk for denne siden. Deretter kan du klikke "Lag graf"-knappen for å lage titreringsgrafen, etter på kan du vise punkt i grafen ved å skrive inn et volum i feltet nedenfor og klikke på "Vis punkt". En rød prikk i grafen vil markere volumet du oppgir.
+instructions=Øverst i høyre hjørne kan du velge språk for denne siden. Deretter kan du klikke "Lag graf" for å lage titreringsgrafen og du kan vise punkt i grafen ved å skrive inn et volum i feltet og klikke på "Vis punkt". En rød prikk i grafen vil markere volumet du oppgir. Konsentrasjon, pH osv. vil vises når man flytter pekeren over et punkt.
 
 static_title=Oppgitte data
 static_val1=Reaksjonslikningen:
@@ -35,3 +35,4 @@ error=Ugyldig eller manglende verdier
 wrong_volume=Volum må være et tall mellom 0 og 100
 
 create_button=Lag graf
+authors=Laget av Martin Polden, Vegard Johannessen og Nirosan Thiyagalingam

@@ -6,7 +6,7 @@ intro_title=Introduction
 intro_desc=In this project we've made a small webapp that shows a titration curve  when 50 mL 0.10 M HCl is titrated with 0.10M NaOH.
 
 instructions_title=Instructions
-instructions=First of all, in the upper right corner you can choose the display language for this site. Then you can click the "Make graph" button to create the initial graph, afterwards you can show various points on the graph by entering a volume in the input field below and then clicking "Show point". A red dot in the graph will indicate the point you selected.
+instructions=First of all, in the upper right corner you can choose the display language for this site. Then you can click the "Make graph" button to create the initial graph, afterwards you can show various points on the graph by entering a volume in the input field below and then clicking "Show point". A red dot in the graph will indicate the point you selected. You can display pH, concentration etc. by hovering over a point in the graph.
 
 static_title=Static data
 static_val1=Chemical equation:
@@ -35,3 +35,4 @@ error=Invalid or missing values
 wrong_volume=Volume must be a number between 0 and 100
 
 create_button=Make graph
+authors=Created by Martin Polden, Vegard Johannessen and Nirosan Thiyagalingam
